@@ -1,23 +1,34 @@
 #!/usr/bin/env ruby
 
 require File.dirname(__FILE__) + '/../lib/staticmatic'
+require 'optparse'
+options = {}
+OptionParser.new do |opts|
+  opts.on("--port N", Integer, "bind to port") do |n|
+    options[:port] = n
+  end
+end.parse!
+
+p options
 
 command = ARGV[0]
 directory = ARGV[1]
 
-if !command || !directory
-  puts "Usage: #{$0} <build|setup|preview> <directory>"
-  exit
-end
-
 configuration = StaticMatic::Configuration.new
-
 config_file = "#{directory}/src/configuration.rb"
 
 if File.exists?(config_file)
   config = File.read(config_file)
   eval(config)
 end
+
+if !command || !directory
+  puts "Usage: #{$0} [options] <build|setup|preview> <directory>"
+  exit
+end
+
+
+configuration.preview_server_port = options[:port] if options[:port]
 
 staticmatic = StaticMatic::Base.new(directory, configuration)
 staticmatic.run(command)
