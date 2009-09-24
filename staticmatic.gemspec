@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{staticmatic}
-  s.version = "0.10.2"
+  s.version = "0.10.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stephen Bartholomew"]
-  s.date = %q{2009-09-20}
+  s.date = %q{2009-09-24}
   s.default_executable = %q{staticmatic}
   s.description = %q{Lightweight Static Site Framework}
   s.email = %q{steve@curve21.com}
@@ -47,16 +47,8 @@ Gem::Specification.new do |s|
      "test/render_test.rb",
      "test/rescue_test.rb",
      "test/sandbox/test_site/configuration.rb",
-     "test/sandbox/test_site/site/index",
      "test/sandbox/test_site/site/index.html",
-     "test/sandbox/test_site/site/layout_test",
-     "test/sandbox/test_site/site/page_with_error",
-     "test/sandbox/test_site/site/page_with_partial_error",
      "test/sandbox/test_site/site/stylesheets/application.css",
-     "test/sandbox/test_site/site/sub_folder/another_sub_folder.",
-     "test/sandbox/test_site/site/sub_folder/another_sub_folder/index.html",
-     "test/sandbox/test_site/site/sub_folder/another_sub_folder/index.html.html",
-     "test/sandbox/test_site/site/sub_folder/index.html",
      "test/sandbox/test_site/src/helpers/application_helper.rb",
      "test/sandbox/test_site/src/layouts/alternate_layout.haml",
      "test/sandbox/test_site/src/layouts/application.haml",
